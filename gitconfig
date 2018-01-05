@@ -1,0 +1,7 @@
+[core]
+  editor = vim
+[push]
+  default = current
+[user]
+  name = Eduardo Preciado
+  email = hi@ejpreciado.com
