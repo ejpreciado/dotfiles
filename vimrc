@@ -40,8 +40,12 @@ let g:ale_fixers = {
   'javascript': ['eslint']
 }
 
+"let g:ale_javascript_eslint_use_global = 1
+
 let g:ale_sign_error = '✘'
+let g:ale_sign_style_error = '✘'
 let g:ale_sign_warning = '⚠'
+let g:ale_sign_style_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -87,7 +91,7 @@ autocmd FileType html setl sw=2 ts=2 et sts=2
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
-packloadall
+"packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
-silent! helptags ALL
+"silent! helptags ALL
