@@ -17,8 +17,11 @@ alias vim=nvim
 alias vi=nvim
 alias rc="rails c"
 alias rr="rails s -b 'ssl://localhost:3000?key=./localhost.key&cert=./localhost.crt'"
+alias icons="defaults write com.apple.finder CreateDesktop"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

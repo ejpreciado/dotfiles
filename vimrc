@@ -2,6 +2,8 @@ call plug#begin()
 
 Plug 'Chiel92/vim-autoformat'
 
+Plug 'w0rp/ale'
+
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
@@ -13,9 +15,6 @@ call plug#end()
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-"air-line
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -35,6 +34,16 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
+"ale
+let g:ale_fixers = {
+  'javascript': ['eslint']
+}
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+let g:ale_fix_on_save = 1
 
 "sensibles
 set encoding=utf-8
@@ -73,3 +82,10 @@ syntax on
 autocmd FileType python set expandtab
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setl sw=2 ts=2 et sts=2
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
