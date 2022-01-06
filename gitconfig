@@ -1,7 +1,7 @@
 [core]
-  editor = vim
-[push]
-  default = current
+    	editor = nvim
 [user]
-  name = Eduardo Preciado
-  email = hi@ejpreciado.com
+	name = Eduardo Preciado
+    	email = hi@ejpreciado.com
+[rerere]
+	enabled = true
