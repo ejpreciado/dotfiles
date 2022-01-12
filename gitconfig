@@ -5,3 +5,5 @@
     	email = hi@ejpreciado.com
 [rerere]
 	enabled = true
+[init]
+        defaultBranch = main
