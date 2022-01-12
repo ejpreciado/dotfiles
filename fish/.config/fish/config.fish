@@ -1,8 +1,9 @@
 set fish_greeting
 set -gx EDITOR nvim
-set -gx VOLTA_HOME "$HOME/.volta"
 
-fish_add_path "$VOLTA_HOME/bin"
 fish_add_path "/opt/homebrew/bin"
 
-starship init fish | source
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+curl https://get.volta.sh | bash
