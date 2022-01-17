@@ -6,10 +6,16 @@ fish_add_path "/usr/local/sbin"
 
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+fish_add_path "$VOLTA_HOME/bin"
 
+# frum
 if test -d $HOME/.frum
   frum init | source
+end
+
+# cargo
+if test -d $HOME/.cargo/bin
+  fish_add_path "$HOME/.cargo/bin"
 end
 
 starship init fish | source
