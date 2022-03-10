@@ -18,7 +18,8 @@ require('packer').startup(function(use)
   use 'bhurlow/vim-parinfer'
   use 'hashicorp/sentinel.vim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'github/copilot.vim'
   if packer_bootstrap then
     require('packer').sync()
   end
