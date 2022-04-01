@@ -20,6 +20,13 @@ require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'github/copilot.vim'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = function() require'nvim-tree'.setup {} end
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
