@@ -27,6 +27,12 @@ require('packer').startup(function(use)
     },
     config = function() require'nvim-tree'.setup {} end
   }
+  use {
+    "ur4ltz/surround.nvim",
+    config = function()
+      require"surround".setup {mappings_style = "sandwich"}
+    end
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
@@ -43,6 +49,7 @@ require'lualine'.setup()
 
 vim.cmd 'colorscheme everforest'
 opt.number = true
+opt.relativenumber = true
 opt.wrap = false
 opt.ignorecase = true
 opt.expandtab = true
@@ -67,6 +74,7 @@ map('n', '<Right>', ':wincmd l<CR>', {})
 map('n', '<Leader>n', ':bn<CR>', {})
 map('n', '<Leader>,', ':vertical resize -10<CR>', {})
 map('n', '<Leader>.', ':vertical resize +10<CR>', {})
+map('v', '.', ':norm.<CR>', {noremap = true})
 
 opt.shell = 'fish'
 cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
