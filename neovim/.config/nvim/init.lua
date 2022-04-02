@@ -28,9 +28,18 @@ require('packer').startup(function(use)
     config = function() require'nvim-tree'.setup {} end
   }
   use {
-    "ur4ltz/surround.nvim",
+    'ur4ltz/surround.nvim',
     config = function()
-      require"surround".setup {mappings_style = "sandwich"}
+      require'surround'.setup {
+        context_offset = 100,
+        load_autogroups = false,
+        mappings_style = 'sandwich',
+        map_insert_mode = true,
+        quotes = {"'", '"'},
+        brackets = {'(', '{', '['},
+        space_on_closing_char = false,
+        prefix = 's',
+      }
     end
   }
   if packer_bootstrap then
@@ -39,7 +48,7 @@ require('packer').startup(function(use)
 end)
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = 'maintained',
   highlight = { enable = true },
   incremental_selection = { enable = true },
   indent = { enable = true }
