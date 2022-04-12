@@ -1,9 +1,9 @@
 [core]
-    	editor = nvim
-[user]
-	name = Eduardo Preciado
-    	email = hi@ejpreciado.com
-[rerere]
-	enabled = true
+  editor = nvim
 [init]
-        defaultBranch = main
+  defaultBranch = main
+[rerere]
+  enabled = true
+[user]
+  name = Eduardo Preciado
+  email = hi@ejpreciado.com
