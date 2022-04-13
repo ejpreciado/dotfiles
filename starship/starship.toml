@@ -1,5 +1,5 @@
 add_newline = false
-command_timeout = 1250
+command_timeout = 1500
 
 [battery]
 full_symbol = "🔋"
