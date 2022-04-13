@@ -2,10 +2,21 @@
   template = ~/.config/git/gitmessage
 [core]
   editor = nvim
+[fetch]
+  prune = true
 [init]
   defaultBranch = main
+[pull]
+  rebase = true
+[push]
+  useForceIfIncludes = true
+[rebase]
+  abbreviateCommands = true
+  autoSquash = true
+  autoStash = true
 [rerere]
   enabled = true
+  autoUpdate = true
 [user]
   name = Eduardo Preciado
   email = hi@ejpreciado.com
