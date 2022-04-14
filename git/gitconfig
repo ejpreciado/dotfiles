@@ -4,6 +4,7 @@
   template = ~/.config/git/gitmessage
 [core]
   editor = nvim
+  excludesFile = ~/.config/git/gitignore
   pager = "less -F"
 [diff]
   colorMoved = dimmed-zebra
