@@ -15,7 +15,7 @@
 [init]
   defaultBranch = main
 [pull]
-  rebase = true
+  rebase = merges
 [push]
   useForceIfIncludes = true
 [rebase]
