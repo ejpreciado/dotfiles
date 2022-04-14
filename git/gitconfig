@@ -1,5 +1,6 @@
 [alias]
   ds = "diff --staged"
+  pf = "push --force-with-lease"
 [commit]
   template = ~/.config/git/gitmessage
 [core]
