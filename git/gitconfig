@@ -1,7 +1,13 @@
+[alias]
+  ds = "diff --staged"
 [commit]
   template = ~/.config/git/gitmessage
 [core]
   editor = nvim
+  pager = "less -F"
+[diff]
+  colorMoved = dimmed-zebra
+  colorMovedWS = allow-indentation-change
 [fetch]
   prune = true
 [init]
