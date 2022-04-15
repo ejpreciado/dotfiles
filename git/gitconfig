@@ -8,6 +8,8 @@
   excludesFile = ~/.config/git/gitignore
   pager = "less -F"
 [diff]
+  algorithm = histogram
+  indentHeuristic = on
   colorMoved = dimmed-zebra
   colorMovedWS = allow-indentation-change
 [fetch]
