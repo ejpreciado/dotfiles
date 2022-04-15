@@ -19,6 +19,7 @@ require('packer').startup(function(use)
   use 'hashicorp/sentinel.vim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'neovim/nvim-lspconfig'
   use 'github/copilot.vim'
   use {
     'kyazdani42/nvim-tree.lua',
