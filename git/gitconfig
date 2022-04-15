@@ -14,6 +14,8 @@
   prune = true
 [init]
   defaultBranch = main
+[merge]
+  conflictStyle = zdiff3
 [pull]
   rebase = merges
 [push]
