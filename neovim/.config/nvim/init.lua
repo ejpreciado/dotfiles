@@ -73,9 +73,10 @@ opt.clipboard = 'unnamed'
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
+local noremap = {noremap = true}
 map('n', '<Space>', '', {})
-map('i', 'jk', '<esc>', {noremap = true})
-map('i', 'kj', '<esc>', {noremap = true})
+map('i', 'jk', '<esc>', noremap)
+map('i', 'kj', '<esc>', noremap)
 map('i', '<esc>', '<nop>', {})
 map('n', '<Up>', ':wincmd k<CR>', {})
 map('n', '<Down>', ':wincmd j<CR>', {})
@@ -84,7 +85,7 @@ map('n', '<Right>', ':wincmd l<CR>', {})
 map('n', '<Leader>n', ':bn<CR>', {})
 map('n', '<Leader>,', ':vertical resize -10<CR>', {})
 map('n', '<Leader>.', ':vertical resize +10<CR>', {})
-map('v', '.', ':norm.<CR>', {noremap = true})
+map('v', '.', ':norm.<CR>', noremap)
 
 opt.shell = 'fish'
 cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
