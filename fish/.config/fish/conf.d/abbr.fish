@@ -24,6 +24,8 @@ if not set -q fish_abbr_set
   abbr --add gds  'git diff --stat'
   abbr --add gdsc 'git diff --stat --cached'
 
+  abbr --add gwch 'git whatchanged -p --abbrev-commit --pretty=medium'
+
   abbr --add glg  'git log --graph --max-count=10'
   abbr --add gls  'git log --stat --max-count=10'
   abbr --add gla  'git log --graph --all'
