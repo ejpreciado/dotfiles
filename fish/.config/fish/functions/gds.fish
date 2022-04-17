@@ -1,3 +1,3 @@
-function gds --description 'alias gds git diff --staged'
-  git diff --staged $argv;
+function gds --description 'alias gds git diff --stat'
+  git diff --stat $argv;
 end
