@@ -49,5 +49,7 @@ if not set -q fish_abbr_set
   abbr --add gsw- 'git switch -'
   abbr --add gswc 'git switch -c'
 
+  abbr --add gtop 'cd (git rev-parse --show-toplevel; or echo ".")'
+
   echo 'Finished setting shell abbreviations'
 end
