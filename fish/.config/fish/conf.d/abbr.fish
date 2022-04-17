@@ -22,7 +22,9 @@ abbr --add gddc 'git diff --color-words --cached'
 abbr --add gds  'git diff --stat'
 abbr --add gdsc 'git diff --stat --cached'
 
-abbr --add gl   'git log --graph --all'
+abbr --add glg  'git log --graph --max-count=10'
+abbr --add gls  'git log --stat --max-count=10'
+abbr --add gla  'git log --graph --all'
 
 abbr --add gp   'git pull'
 abbr --add gpp  'git pull; and git push --force-with-lease'
