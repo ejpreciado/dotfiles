@@ -1,4 +1,5 @@
 if not set -q fish_abbr_set
+  echo 'Setting shell abbreviations'
   # shell
 
   # git
@@ -45,4 +46,6 @@ if not set -q fish_abbr_set
   abbr --add gsw  'git switch'
   abbr --add gsw- 'git switch -'
   abbr --add gswc 'git switch -c'
+
+  echo 'Finished setting shell abbreviations'
 end

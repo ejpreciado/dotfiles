@@ -1,5 +1,5 @@
-function abbr_set --description 'Set abbreviations from conf.d/abbr.fish'
-  echo "Setting fish abbreviations"
+function set_abbr --description 'Set abbreviations from conf.d/abbr.fish'
+  echo "Refreshing abbreviations"
 
   # Erase all existing abbreviations
   for ab in (abbr --list)
