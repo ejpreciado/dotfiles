@@ -1,6 +1,5 @@
 neovim/.config/nvim/plugin/
 fish/.config/fish/completions/*
-fish/.config/fish/conf.d/*
 fish/.config/fish/fish_variables
 kitty/.config/kitty/current-theme.conf
 kitty/.config/kitty/kitty.conf.bak
