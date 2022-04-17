@@ -5,8 +5,10 @@ set -gx EDITOR nvim
 fish_add_path "/usr/local/sbin"
 
 # volta
-set -gx VOLTA_HOME "$HOME/.volta"
-fish_add_path "$VOLTA_HOME/bin"
+if test -d $HOME/.volta
+  set -gx VOLTA_HOME "$HOME/.volta"
+  fish_add_path "$VOLTA_HOME/bin"
+end
 
 # frum
 if test -d $HOME/.frum
