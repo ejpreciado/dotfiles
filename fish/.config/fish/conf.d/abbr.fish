@@ -1,0 +1,23 @@
+# shell
+
+# git
+abbr --add ga   'git add'
+abbr --add gap  'git add -p'
+abbr --add gb   'git branch'
+abbr --add gc   'git commit --verbose'
+abbr --add gca  'git commit -a --verbose'
+abbr --add gcam 'git commit -am'
+abbr --add gcm  'git commit -m'
+abbr --add gco  'git checkout'
+abbr --add gd   'git diff'
+abbr --add gdc  'git diff --cached'
+abbr --add gdd  'git diff --color-words'
+abbr --add gddc 'git diff --color-words --cached'
+abbr --add gds  'git diff --stat'
+abbr --add gdsc  'git diff --stat --cached'
+abbr --add gl   'git log --graph --all'
+abbr --add gm   'git commit --amend --verbose'
+abbr --add gp   'git pull'
+abbr --add gpu  'git push --force-with-lease'
+abbr --add grbi 'git rebase -i'
+abbr --add gs   'git status --short'
