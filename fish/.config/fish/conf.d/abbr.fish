@@ -34,6 +34,9 @@ if not set -q fish_abbr_set
   abbr --add gpp  'git pull; and git push --force-with-lease'
   abbr --add gpu  'git push --force-with-lease'
 
+  abbr --add gr   'git restore'
+  abbr --add grs  'git restore --staged'
+
   abbr --add grbi 'git rebase -i'
   abbr --add grbc 'git rebase --continue'
   abbr --add grba 'git rebase --abort'
