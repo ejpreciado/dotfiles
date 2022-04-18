@@ -1,6 +1,8 @@
 if not set -q fish_abbr_set
   echo 'Setting abbreviations'
   # shell
+  abbr --add e    'nvim'
+  abbr --add vim  'nvim'
 
   # git
   abbr --add g    'git'
