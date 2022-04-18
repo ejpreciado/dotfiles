@@ -37,3 +37,7 @@ if type -q starship
   starship init fish | source
   enable_transience
 end
+
+# Justworks
+source /opt/secrets/current/dev_env_exports.sh
+source ~/src/github.com/ejpreciado/dev/dev.fish
