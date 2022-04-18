@@ -1,5 +1,5 @@
 if not set -q fish_abbr_set
-  echo 'Setting shell abbreviations'
+  echo 'Setting abbreviations'
   # shell
 
   # git
@@ -51,5 +51,6 @@ if not set -q fish_abbr_set
 
   abbr --add gtop 'cd (git rev-parse --show-toplevel; or echo ".")'
 
-  echo 'Finished setting shell abbreviations'
+  echo 'Finished setting abbreviations'
+  set -U fish_abbr_set true
 end
