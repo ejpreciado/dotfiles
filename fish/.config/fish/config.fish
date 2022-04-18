@@ -1,5 +1,8 @@
 set fish_greeting
+
+# i love neovim
 set -gx EDITOR nvim
+set -Ux MANPAGER 'nvim +Man!'
 
 # homebrew
 fish_add_path "/usr/local/sbin"
