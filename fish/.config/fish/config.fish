@@ -1,3 +1,4 @@
+# suppress intro message
 set fish_greeting
 
 # i love neovim
