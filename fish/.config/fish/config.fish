@@ -23,4 +23,7 @@ if test -d $HOME/.cargo/bin
   fish_add_path "$HOME/.cargo/bin"
 end
 
-starship init fish | source
+# starship
+if type -q starship
+  starship init fish | source
+end
