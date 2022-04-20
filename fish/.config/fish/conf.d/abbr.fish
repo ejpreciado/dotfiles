@@ -67,6 +67,16 @@ if not set -q fish_abbr_set
 
   abbr --add gtop 'cd (git rev-parse --show-toplevel; or echo ".")'
 
+  # Justworks
+  abbr --add rdb  'DB=remote'
+  abbr --add be   'bundle exec'
+  abbr --add berc 'bundle exec rails c'
+  abbr --add bers 'bundle exec rails s'
+  abbr --add sdkq 'redis-server --daemonize yes; bundle exec sidekiq'
+  abbr --add rdfl 'redis-cli flushall'
+  abbr --add yw   'yarn watch'
+  abbr --add yb   'yarn build'
+
   echo 'Finished setting abbreviations'
   set -U fish_abbr_set true
 end
