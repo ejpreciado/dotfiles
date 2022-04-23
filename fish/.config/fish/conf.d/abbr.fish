@@ -4,6 +4,11 @@ if not set -q fish_abbr_set
   abbr --add e    'nvim'
   abbr --add vim  'nvim'
 
+  # pyenv
+  abbr --add pe   'pyenv'
+  abbr --add pea  'pyenv activate'
+  abbr --add ped  'pyenv deactivate'
+
   # git
   abbr --add g    'git'
   abbr --add ga   'git add'
