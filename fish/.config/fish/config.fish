@@ -6,7 +6,7 @@ set -gx EDITOR nvim
 set -Ux MANPAGER 'nvim +Man!'
 
 # homebrew
-fish_add_path "/usr/local/sbin"
+fish_add_path /opt/homebrew/sbin
 
 # volta
 if test -d $HOME/.volta
