@@ -53,6 +53,7 @@ if not set -q fish_abbr_set
   abbr --add gsts 'git stash show --text'
   abbr --add gstp 'git stash pop'
   abbr --add gstd 'git stash drop'
+  abbr --add gstl 'git stash list'
 
   abbr --add gs   'git status --short'
   abbr --add gsw  'git switch'
