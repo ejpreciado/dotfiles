@@ -8,6 +8,11 @@ set -Ux MANPAGER 'nvim +Man!'
 # homebrew
 fish_add_path /opt/homebrew/sbin
 
+# postgres
+if type -q Postgres
+  fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
+end
+
 # volta
 if test -d $HOME/.volta
   set -gx VOLTA_HOME "$HOME/.volta"
