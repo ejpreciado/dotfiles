@@ -32,7 +32,23 @@ require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {} end
+    config = function() require'nvim-tree'.setup {
+      sort_by = "case_sensitive",
+      view = {
+        adaptive_size = true,
+        mappings = {
+          list = {
+            -- { key = "u", action = "dir_up" },
+          },
+        },
+      },
+      renderer = {
+        group_empty = true,
+      },
+      filters = {
+        dotfiles = true,
+      },
+    } end
   }
   use {
     'ur4ltz/surround.nvim',
@@ -113,6 +129,9 @@ map('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', noremap)
 map('n', '<Leader>fb', '<cmd>Telescope buffers<cr>', noremap)
 map('n', '<Leader>fh', '<cmd>Telescope help_tags<cr>', noremap)
 map('n', '<Leader>fc', '<cmd>Telescope git_commits<cr>', noremap)
+
+-- nvim-tree
+map('n', '<Leader>/', '<cmd>NvimTreeFindFile<cr>', noremap)
 
 opt.shell = 'fish'
 cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
