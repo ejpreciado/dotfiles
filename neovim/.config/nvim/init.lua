@@ -101,7 +101,7 @@ map('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', noremap)
 map('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', noremap)
 map('n', '<Leader>fb', '<cmd>Telescope buffers<cr>', noremap)
 map('n', '<Leader>fh', '<cmd>Telescope help_tags<cr>', noremap)
-
+map('n', '<Leader>fc', '<cmd>Telescope git_commits<cr>', noremap)
 
 opt.shell = 'fish'
 cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
