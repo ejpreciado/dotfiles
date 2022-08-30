@@ -11,7 +11,13 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'dense-analysis/ale'
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      'sharkdp/fd',
+    }
+  }
   use 'mhinz/vim-signify'
   use 'jiangmiao/auto-pairs'
   use 'sainnhe/everforest'
