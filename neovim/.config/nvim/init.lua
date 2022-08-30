@@ -66,6 +66,17 @@ require'nvim-treesitter.configs'.setup {
 -- lualine
 require'lualine'.setup()
 
+-- telescope
+require"telescope".setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = require"telescope.actions".close
+      },
+    },
+  }
+}
+
 vim.cmd 'colorscheme everforest'
 opt.number = true
 opt.relativenumber = true
