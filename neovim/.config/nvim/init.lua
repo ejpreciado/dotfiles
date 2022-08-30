@@ -66,6 +66,7 @@ require('packer').startup(function(use)
     end
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   if packer_bootstrap then
     require('packer').sync()
   end
@@ -104,6 +105,9 @@ require"telescope".setup{
 }
 
 require('telescope').load_extension('fzf')
+
+-- bufferline
+require("bufferline").setup{}
 
 vim.cmd 'colorscheme everforest'
 opt.number = true
