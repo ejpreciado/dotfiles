@@ -144,6 +144,3 @@ map('n', '<Leader>fc', '<cmd>Telescope git_commits<cr>', noremap)
 
 -- nvim-tree
 map('n', '<Leader>/', '<cmd>NvimTreeFindFile<cr>', noremap)
-
-opt.shell = 'fish'
-cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
