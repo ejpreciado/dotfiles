@@ -48,6 +48,7 @@ require('packer').startup(function(use)
   end
 end)
 
+-- treesitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = 'all',
   highlight = { enable = true },
@@ -56,6 +57,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { "phpdoc", "tree-sitter-phpdoc" },
 }
 
+-- lualine
 require'lualine'.setup()
 
 vim.cmd 'colorscheme everforest'
@@ -87,6 +89,13 @@ map('n', '<Leader>n', ':bn<CR>', {})
 map('n', '<Leader>,', ':vertical resize -10<CR>', {})
 map('n', '<Leader>.', ':vertical resize +10<CR>', {})
 map('v', '.', ':norm.<CR>', noremap)
+
+-- telescope
+map('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', noremap)
+map('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', noremap)
+map('n', '<Leader>fb', '<cmd>Telescope buffers<cr>', noremap)
+map('n', '<Leader>fh', '<cmd>Telescope help_tags<cr>', noremap)
+
 
 opt.shell = 'fish'
 cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
