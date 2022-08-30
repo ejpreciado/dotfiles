@@ -65,6 +65,7 @@ require('packer').startup(function(use)
       }
     end
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   if packer_bootstrap then
     require('packer').sync()
   end
@@ -90,8 +91,19 @@ require"telescope".setup{
         ["<esc>"] = require"telescope.actions".close
       },
     },
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
   }
 }
+
+require('telescope').load_extension('fzf')
 
 vim.cmd 'colorscheme everforest'
 opt.number = true
