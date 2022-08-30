@@ -49,10 +49,11 @@ require('packer').startup(function(use)
 end)
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'maintained',
+  ensure_installed = 'all',
   highlight = { enable = true },
   incremental_selection = { enable = true },
-  indent = { enable = true }
+  indent = { enable = true },
+  ignore_install = { "phpdoc", "tree-sitter-phpdoc" },
 }
 
 require'lualine'.setup()
