@@ -1,3 +1,5 @@
+[alias]
+  flush = "!git fetch -p && git checkout master && git pull && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
 [commit]
   template = ~/.config/git/gitmessage
 [core]
