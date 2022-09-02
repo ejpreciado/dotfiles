@@ -40,4 +40,4 @@ end
 
 # Justworks
 source /opt/secrets/current/dev_env_exports.sh
-source ~/src/github.com/ejpreciado/dev/dev.fish
+source /opt/dev/dev.fish
