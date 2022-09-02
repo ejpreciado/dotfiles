@@ -32,23 +32,6 @@ require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {
-      sort_by = "case_sensitive",
-      view = {
-        adaptive_size = true,
-        mappings = {
-          list = {
-            -- { key = "u", action = "dir_up" },
-          },
-        },
-      },
-      renderer = {
-        group_empty = true,
-      },
-      filters = {
-        dotfiles = true,
-      },
-    } end
   }
   use {
     'ur4ltz/surround.nvim',
@@ -80,6 +63,23 @@ require'nvim-treesitter.configs'.setup {
   indent = { enable = true },
   ignore_install = { "phpdoc", "tree-sitter-phpdoc" },
 }
+
+-- nvim-tree
+require'nvim-tree'.setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = { custom = { "^.git$" } },
+})
 
 -- lualine
 require'lualine'.setup()
