@@ -1,15 +1,19 @@
+-- functions
 local fn = vim.fn
 local map = vim.api.nvim_set_keymap
 local opt = vim.opt
 local cmd = vim.api.nvim_command
 
+-- packer bootstrap
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
+
+-- packer
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use { 'nvim-lualine/lualine.nvim' }
   use 'dense-analysis/ale'
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'mhinz/vim-signify'
@@ -20,10 +24,11 @@ require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'neovim/nvim-lspconfig'
-  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+  use { 'kyazdani42/nvim-tree.lua' }
   use 'ur4ltz/surround.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v2.*" }
+  use { 'kyazdani42/nvim-web-devicons' }
   if packer_bootstrap then
     require('packer').sync()
   end
@@ -96,6 +101,7 @@ require'surround'.setup {
 -- bufferline
 require("bufferline").setup{}
 
+-- display
 vim.cmd 'colorscheme everforest'
 opt.number = true
 opt.relativenumber = true
@@ -110,6 +116,7 @@ opt.updatetime = 100
 opt.background = 'dark'
 opt.clipboard = 'unnamed'
 
+-- mappings
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 local noremap = {noremap = true}
