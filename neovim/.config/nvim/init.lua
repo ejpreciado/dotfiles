@@ -11,13 +11,7 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'dense-analysis/ale'
-  use { 'nvim-telescope/telescope.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'BurntSushi/ripgrep',
-      'sharkdp/fd',
-    }
-  }
+  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'mhinz/vim-signify'
   use 'jiangmiao/auto-pairs'
   use 'sainnhe/everforest'
@@ -26,27 +20,8 @@ require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'neovim/nvim-lspconfig'
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-  }
-  use {
-    'ur4ltz/surround.nvim',
-    config = function()
-      require'surround'.setup {
-        context_offset = 100,
-        load_autogroups = false,
-        mappings_style = 'sandwich',
-        map_insert_mode = true,
-        quotes = {"'", '"'},
-        brackets = {'(', '{', '['},
-        space_on_closing_char = false,
-        prefix = 's',
-      }
-    end
-  }
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+  use 'ur4ltz/surround.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   if packer_bootstrap then
