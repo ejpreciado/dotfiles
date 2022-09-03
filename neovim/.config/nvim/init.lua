@@ -16,23 +16,19 @@ end
 -- packer
 require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
-    use "nvim-lualine/lualine.nvim"
-    use "dense-analysis/ale"
-    use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
-    use "mhinz/vim-signify"
-    use "jiangmiao/auto-pairs"
-    use "sainnhe/everforest"
-    use "bhurlow/vim-parinfer"
-    use "hashicorp/sentinel.vim"
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use "lukas-reineke/indent-blankline.nvim"
-    use "neovim/nvim-lspconfig"
-    use "kyazdani42/nvim-tree.lua"
-    use "ur4ltz/surround.nvim"
-    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
-    use {"akinsho/bufferline.nvim", tag = "v2.*"}
-    use "rmagatti/auto-session"
     use "kyazdani42/nvim-web-devicons"
+    use "nvim-lualine/lualine.nvim"
+    use "neovim/nvim-lspconfig"
+    use "lewis6991/gitsigns.nvim"
+    use "sainnhe/everforest"
+    use "rmagatti/auto-session"
+    use "kyazdani42/nvim-tree.lua"
+    use "lukas-reineke/indent-blankline.nvim"
+    use {"kylechui/nvim-surround", tag = "*"}
+    use {"akinsho/bufferline.nvim", tag = "v2.*"}
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+    use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
     if packer_bootstrap then require("packer").sync() end
 end)
 
