@@ -31,6 +31,7 @@ require("packer").startup(function(use)
     use "ur4ltz/surround.nvim"
     use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
     use {"akinsho/bufferline.nvim", tag = "v2.*"}
+    use "rmagatti/auto-session"
     use "kyazdani42/nvim-web-devicons"
     if packer_bootstrap then require("packer").sync() end
 end)
@@ -92,6 +93,24 @@ require("surround").setup({
 
 -- bufferline
 require("bufferline").setup({})
+
+-- auto-session
+require("auto-session").setup({
+    log_level = "error",
+    auto_session_suppress_dirs = {"~/", "~/Development", "~/Downloads", "/"},
+    auto_session_enable_last_session = false,
+    auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
+    auto_session_enabled = true,
+    auto_save_enabled = true,
+    auto_restore_enabled = true,
+    bypass_session_save_file_types = true,
+    cwd_change_handling = {
+        post_cwd_changed_hook = function() require("lualine").refresh() end
+    }
+})
+
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- display
 vim.cmd("colorscheme everforest")
