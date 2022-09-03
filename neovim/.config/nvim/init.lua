@@ -51,8 +51,10 @@ require("nvim-tree").setup({
         adaptive_size = true,
         mappings = {list = {{key = "u", action = "dir_up"}}}
     },
-    renderer = {group_empty = true},
-    filters = {custom = {"^.git$"}}
+    filters = {custom = {"^.git$"}},
+    live_filter = {always_show_folders = true},
+    renderer = {group_empty = true, highlight_opened_files = "all"},
+    update_focused_file = {enable = true}
 })
 
 -- lualine
@@ -133,4 +135,4 @@ nvim_set_keymap("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", noremap)
 nvim_set_keymap("n", "<Leader>fc", "<cmd>Telescope git_commits<cr>", noremap)
 
 -- nvim-tree
-nvim_set_keymap("n", "<Leader>/", "<cmd>NvimTreeFindFile<cr>", noremap)
+nvim_set_keymap("n", "<Leader>/", "<cmd>NvimTreeToggle<cr>", noremap)
