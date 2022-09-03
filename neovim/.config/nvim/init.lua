@@ -54,8 +54,18 @@ require("nvim-tree").setup({
     update_focused_file = {enable = true}
 })
 
+-- indent-blankline
+require("indent_blankline").setup({
+    show_current_context = true,
+    show_current_context_start = true,
+    show_end_of_line = true
+})
+
 -- lualine
 require("lualine").setup()
+
+-- gitsigns
+require("gitsigns").setup()
 
 -- telescope
 require("telescope").setup {
@@ -76,16 +86,7 @@ require("telescope").setup {
 require("telescope").load_extension("fzf")
 
 -- surround
-require("surround").setup({
-    context_offset = 100,
-    load_autogroups = false,
-    mappings_style = "sandwich",
-    map_insert_mode = true,
-    quotes = {"'", '"'},
-    brackets = {"(", "{", "["},
-    space_on_closing_char = false,
-    prefix = "s"
-})
+require("nvim-surround").setup()
 
 -- bufferline
 require("bufferline").setup({})
