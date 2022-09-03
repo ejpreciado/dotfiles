@@ -39,5 +39,9 @@ if type -q starship
 end
 
 # Justworks
-source /opt/secrets/current/dev_env_exports.sh
-source /opt/dev/dev.fish
+if test -e /opt/secrets/current/dev_env_exports.sh
+  source /opt/secrets/current/dev_env_exports.sh
+end
+if test -e /opt/dev/dev.fish
+  source /opt/dev/dev.fish
+end
