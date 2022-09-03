@@ -32,14 +32,29 @@ require("packer").startup(function(use)
     if packer_bootstrap then require("packer").sync() end
 end)
 
--- treesitter
-require("nvim-treesitter.configs").setup({
-    ensure_installed = "all",
-    highlight = {enable = true},
-    incremental_selection = {enable = true},
-    indent = {enable = true},
-    ignore_install = {"phpdoc", "tree-sitter-phpdoc"}
+-- lualine
+require("lualine").setup()
+
+-- gitsigns
+require("gitsigns").setup()
+
+-- auto-session
+require("auto-session").setup({
+    log_level = "error",
+    auto_session_suppress_dirs = {"~/", "~/Development", "~/Downloads", "/"},
+    auto_session_enable_last_session = false,
+    auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
+    auto_session_enabled = true,
+    auto_save_enabled = true,
+    auto_restore_enabled = true,
+    bypass_session_save_file_types = true,
+    cwd_change_handling = {
+        post_cwd_changed_hook = function() require("lualine").refresh() end
+    }
 })
+
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- nvim-tree
 require("nvim-tree").setup({
@@ -61,11 +76,20 @@ require("indent_blankline").setup({
     show_end_of_line = true
 })
 
--- lualine
-require("lualine").setup()
+-- surround
+require("nvim-surround").setup()
 
--- gitsigns
-require("gitsigns").setup()
+-- bufferline
+require("bufferline").setup({})
+
+-- treesitter
+require("nvim-treesitter.configs").setup({
+    ensure_installed = "all",
+    highlight = {enable = true},
+    incremental_selection = {enable = true},
+    indent = {enable = true},
+    ignore_install = {"phpdoc", "tree-sitter-phpdoc"}
+})
 
 -- telescope
 require("telescope").setup {
@@ -84,30 +108,6 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension("fzf")
-
--- surround
-require("nvim-surround").setup()
-
--- bufferline
-require("bufferline").setup({})
-
--- auto-session
-require("auto-session").setup({
-    log_level = "error",
-    auto_session_suppress_dirs = {"~/", "~/Development", "~/Downloads", "/"},
-    auto_session_enable_last_session = false,
-    auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
-    auto_session_enabled = true,
-    auto_save_enabled = true,
-    auto_restore_enabled = true,
-    bypass_session_save_file_types = true,
-    cwd_change_handling = {
-        post_cwd_changed_hook = function() require("lualine").refresh() end
-    }
-})
-
-vim.o.sessionoptions =
-    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- display
 vim.cmd("colorscheme everforest")
@@ -143,12 +143,12 @@ nvim_set_keymap("n", "<Leader>,", ":vertical resize -10<CR>", {})
 nvim_set_keymap("n", "<Leader>.", ":vertical resize +10<CR>", {})
 nvim_set_keymap("v", ".", ":norm.<CR>", noremap)
 
+-- nvim-tree
+nvim_set_keymap("n", "<Leader>/", "<cmd>NvimTreeToggle<cr>", noremap)
+
 -- telescope
 nvim_set_keymap("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", noremap)
 nvim_set_keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<cr>", noremap)
 nvim_set_keymap("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", noremap)
 nvim_set_keymap("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", noremap)
 nvim_set_keymap("n", "<Leader>fc", "<cmd>Telescope git_commits<cr>", noremap)
-
--- nvim-tree
-nvim_set_keymap("n", "<Leader>/", "<cmd>NvimTreeToggle<cr>", noremap)
