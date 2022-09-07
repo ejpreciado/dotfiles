@@ -19,6 +19,7 @@ require("packer").startup(function(use)
     use "kyazdani42/nvim-web-devicons"
     use "nvim-lualine/lualine.nvim"
     use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
     use "lewis6991/gitsigns.nvim"
     use "sainnhe/everforest"
