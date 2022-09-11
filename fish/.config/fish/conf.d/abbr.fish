@@ -24,6 +24,7 @@ if not set -q fish_abbr_set
   abbr --add gm   'git commit --amend --verbose'
 
   abbr --add gco  'git checkout'
+  abbr --add gco.  'git checkout .'
 
   abbr --add gd   'git diff'
   abbr --add gdc  'git diff --cached'
