@@ -20,6 +20,7 @@
 [pull]
   rebase = merges
 [push]
+  autoSetupRemote = true
   useForceIfIncludes = true
 [rebase]
   abbreviateCommands = true
