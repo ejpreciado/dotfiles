@@ -1,5 +1,8 @@
 [justworks]
 email = epreciado@justworks.com
 
+[puppet]
+username = ejpreciado
+
 [secrets]
-last_pull_at = 1662989088
+last_pull_at = 1682321627
