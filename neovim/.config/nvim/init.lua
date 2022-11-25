@@ -19,23 +19,24 @@ local packer_bootstrap = ensure_packer()
 
 -- packer
 require("packer").startup(function(use)
-    use "wbthomason/packer.nvim"
-    use "kyazdani42/nvim-web-devicons"
-    use "nvim-lualine/lualine.nvim"
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use "neovim/nvim-lspconfig"
-    use "lewis6991/gitsigns.nvim"
-    use "sainnhe/everforest"
-    use "rmagatti/auto-session"
-    use "kyazdani42/nvim-tree.lua"
-    use "lukas-reineke/indent-blankline.nvim"
-    use {"kylechui/nvim-surround", tag = "*"}
-    use {"akinsho/bufferline.nvim", tag = "v2.*"}
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
-    use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
-    if packer_bootstrap then require("packer").sync() end
+  use "wbthomason/packer.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  use "nvim-lualine/lualine.nvim"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig"
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use "lewis6991/gitsigns.nvim"
+  use "sainnhe/everforest"
+  use 'jiangmiao/auto-pairs'
+  use "kyazdani42/nvim-tree.lua"
+  use "lukas-reineke/indent-blankline.nvim"
+  use {"kylechui/nvim-surround", tag = "*"}
+  use {"akinsho/bufferline.nvim", tag = "v2.*"}
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+  use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
+  if packer_bootstrap then require("packer").sync() end
 end)
 
 -- lualine
@@ -69,23 +70,11 @@ require("mason-lspconfig").setup_handlers({
   end
 })
 
+-- lsp lines
+require("lsp_lines").setup()
+
 -- gitsigns
 require("gitsigns").setup()
-
--- auto-session
-require("auto-session").setup({
-    log_level = "error",
-    auto_session_suppress_dirs = {"~/", "~/Development", "~/Downloads", "/"},
-    auto_session_enable_last_session = false,
-    auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
-    auto_session_enabled = true,
-    auto_save_enabled = true,
-    auto_restore_enabled = true,
-    bypass_session_save_file_types = true,
-    cwd_change_handling = {
-        post_cwd_changed_hook = function() require("lualine").refresh() end
-    }
-})
 
 vim.o.sessionoptions =
     "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
@@ -157,6 +146,7 @@ opt.colorcolumn = "100"
 opt.updatetime = 100
 opt.background = "dark"
 opt.clipboard = "unnamed"
+vim.diagnostic.config { virtual_text = false }
 
 -- mappings
 vim.g.mapleader = " "
