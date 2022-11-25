@@ -50,12 +50,12 @@ require("mason").setup({
 
 -- mason-lspconfig
 require("mason-lspconfig").setup({
-    ensure_installed = { "sumneko_lua", "solargraph" }
+    ensure_installed = { "sumneko_lua", "ruby_ls" }
 })
 
 -- lsp
 require('lspconfig').sumneko_lua.setup({})
-require('lspconfig').solargraph.setup({})
+require('lspconfig').ruby_ls.setup({})
 
 -- gitsigns
 require("gitsigns").setup()
