@@ -2,16 +2,20 @@
 local fn = vim.fn
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local opt = vim.opt
-local nvim_command = vim.api.nvim_command
 
 -- packer bootstrap
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        "git", "clone", "--depth", "1",
-        "https://github.com/wbthomason/packer.nvim", install_path
+local ensure_packer = function()
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({
+      "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path
     })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
+local packer_bootstrap = ensure_packer()
 
 -- packer
 require("packer").startup(function(use)
@@ -54,8 +58,16 @@ require("mason-lspconfig").setup({
 })
 
 -- lsp
-require('lspconfig').sumneko_lua.setup({})
-require('lspconfig').ruby_ls.setup({})
+require("lspconfig").sumneko_lua.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" }
+      }
+    }
+  }
+})
+require("lspconfig").ruby_ls.setup({})
 
 -- gitsigns
 require("gitsigns").setup()
@@ -65,7 +77,7 @@ require("auto-session").setup({
     log_level = "error",
     auto_session_suppress_dirs = {"~/", "~/Development", "~/Downloads", "/"},
     auto_session_enable_last_session = false,
-    auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
+    auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
     auto_session_enabled = true,
     auto_save_enabled = true,
     auto_restore_enabled = true,
