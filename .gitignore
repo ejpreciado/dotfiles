@@ -5,3 +5,4 @@ fish/.config/fish/fish_variables
 fish/.config/fish/functions/*
 kitty/.config/kitty/current-theme.conf
 kitty/.config/kitty/kitty.conf.bak
+dev/logs/*
