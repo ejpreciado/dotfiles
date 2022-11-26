@@ -147,6 +147,7 @@ opt.termguicolors = true
 opt.colorcolumn = "100"
 opt.updatetime = 100
 opt.clipboard = "unnamed"
+opt.hidden = true
 vim.diagnostic.config { virtual_text = false }
 
 -- mappings
@@ -157,19 +158,24 @@ nvim_set_keymap("n", "<Space>", "", {})
 nvim_set_keymap("i", "jk", "<esc>", noremap)
 nvim_set_keymap("i", "kj", "<esc>", noremap)
 nvim_set_keymap("i", "<esc>", "<nop>", {})
-nvim_set_keymap("n", "<Up>", ":wincmd k<CR>", {})
-nvim_set_keymap("n", "<Down>", ":wincmd j<CR>", {})
-nvim_set_keymap("n", "<Left>", ":wincmd h<CR>", {})
-nvim_set_keymap("n", "<Right>", ":wincmd l<CR>", {})
-nvim_set_keymap("n", "<Leader>n", ":bn<CR>", {})
-nvim_set_keymap("n", "<Leader>p", ":bp<CR>", {})
+nvim_set_keymap("n", "<C-h>", ":wincmd h<CR>", {})
+nvim_set_keymap("n", "<C-j>", ":wincmd j<CR>", {})
+nvim_set_keymap("n", "<C-k>", ":wincmd k<CR>", {})
+nvim_set_keymap("n", "<C-l>", ":wincmd l<CR>", {})
+nvim_set_keymap("n", "<Leader>h", ":bf<CR>", {})
+nvim_set_keymap("n", "<Leader>j", ":bp<CR>", {})
+nvim_set_keymap("n", "<Leader>k", ":bn<CR>", {})
+nvim_set_keymap("n", "<Leader>l", ":bl<CR>", {})
 nvim_set_keymap("n", "<Leader>w", ":bd<CR>", {})
 nvim_set_keymap("n", "<Leader>,", ":vertical resize -10<CR>", {})
 nvim_set_keymap("n", "<Leader>.", ":vertical resize +10<CR>", {})
+nvim_set_keymap("c", "<C-p>", "<Up>", noremap)
+nvim_set_keymap("c", "<C-n>", "<Down>", noremap)
 nvim_set_keymap("v", ".", ":norm.<CR>", noremap)
 
 -- nvim-tree
 nvim_set_keymap("n", "<Leader>/", "<cmd>NvimTreeToggle<cr>", noremap)
+nvim_set_keymap("n", "<C-/>", "<cmd>NvimTreeFocus<cr>", noremap)
 
 -- telescope
 nvim_set_keymap("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", noremap)
