@@ -27,13 +27,15 @@ require("packer").startup(function(use)
   use "neovim/nvim-lspconfig"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   use "lewis6991/gitsigns.nvim"
-  use "sainnhe/everforest"
-  use 'jiangmiao/auto-pairs'
+  use "jiangmiao/auto-pairs"
   use "lukas-reineke/indent-blankline.nvim"
+  use "shaunsingh/nord.nvim"
   use {"nvim-tree/nvim-tree.lua", requires = {"nvim-tree/nvim-web-devicons"}}
   use {"romgrk/barbar.nvim", requires = {"nvim-tree/nvim-web-devicons"}}
   use {"kylechui/nvim-surround", tag = "*"}
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use {"nvim-treesitter/nvim-treesitter", run = function()
+    if vim.fn.exists(":TSUpdate") == 2 then vim.cmd.TSUpdate() end
+  end }
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
   use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
   if packer_bootstrap then require("packer").sync() end
@@ -133,7 +135,7 @@ require("telescope").setup {
 require("telescope").load_extension("fzf")
 
 -- display
-vim.cmd("colorscheme everforest")
+vim.cmd [[colorscheme nord]]
 opt.number = true
 opt.relativenumber = true
 opt.wrap = false
@@ -144,7 +146,6 @@ opt.shiftwidth = 2
 opt.termguicolors = true
 opt.colorcolumn = "100"
 opt.updatetime = 100
-opt.background = "dark"
 opt.clipboard = "unnamed"
 vim.diagnostic.config { virtual_text = false }
 
