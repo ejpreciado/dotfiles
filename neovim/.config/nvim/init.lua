@@ -20,7 +20,7 @@ local packer_bootstrap = ensure_packer()
 -- packer
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
-  use "kyazdani42/nvim-web-devicons"
+  use "nvim-tree/nvim-web-devicons"
   use "nvim-lualine/lualine.nvim"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
@@ -29,10 +29,10 @@ require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "sainnhe/everforest"
   use 'jiangmiao/auto-pairs'
-  use "kyazdani42/nvim-tree.lua"
   use "lukas-reineke/indent-blankline.nvim"
+  use {"nvim-tree/nvim-tree.lua", requires = {"nvim-tree/nvim-web-devicons"}}
+  use {"romgrk/barbar.nvim", requires = {"nvim-tree/nvim-web-devicons"}}
   use {"kylechui/nvim-surround", tag = "*"}
-  use {"akinsho/bufferline.nvim", tag = "v2.*"}
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
   use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
@@ -92,6 +92,9 @@ require("nvim-tree").setup({
     update_focused_file = {enable = true}
 })
 
+-- barbar
+require("bufferline").setup()
+
 -- indent-blankline
 require("indent_blankline").setup({
     show_current_context = true,
@@ -101,9 +104,6 @@ require("indent_blankline").setup({
 
 -- surround
 require("nvim-surround").setup()
-
--- bufferline
-require("bufferline").setup({})
 
 -- treesitter
 require("nvim-treesitter.configs").setup({
