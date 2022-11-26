@@ -38,3 +38,7 @@ format = '($state( $progress_current of $progress_total)) '
 [git_commit]
 commit_hash_length = 8
 style = "bold white"
+
+[time]
+disabled=false
+format = '[$time]($style)'
