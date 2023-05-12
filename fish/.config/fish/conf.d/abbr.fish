@@ -12,10 +12,12 @@ if not set -q fish_abbr_set
 
   # git
   abbr --add g    'git'
+
   abbr --add ga   'git add'
   abbr --add gap  'git add -p'
 
   abbr --add gb   'git branch'
+  abbr --add gbd  'git branch -D'
 
   abbr --add gc   'git commit --verbose'
   abbr --add gca  'git commit -a --verbose'
@@ -45,6 +47,7 @@ if not set -q fish_abbr_set
 
   abbr --add gr   'git restore'
   abbr --add grs  'git restore --staged'
+  abbr --add grs. 'git restore --staged .'
 
   abbr --add grbi 'git rebase -i'
   abbr --add grbc 'git rebase --continue'
