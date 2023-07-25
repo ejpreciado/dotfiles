@@ -1,6 +1,9 @@
 # suppress intro message
 set fish_greeting
 
+# homebrew
+fish_add_path /opt/homebrew/bin
+
 # i love neovim
 set -gx EDITOR nvim
 set -Ux MANPAGER 'nvim +Man!'
