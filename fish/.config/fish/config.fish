@@ -32,15 +32,6 @@ if test -d $HOME/.pyenv
   status is-interactive; and pyenv virtualenv-init - | source
 end
 
-# starship
-if type -q starship
-  function starship_transient_rprompt_func
-    starship module time
-  end
-  starship init fish | source
-  enable_transience
-end
-
 # Justworks
 if test -e /opt/secrets/current/dev_env_exports.sh
   source /opt/secrets/current/dev_env_exports.sh
